@@ -3,7 +3,7 @@
 # March 23, 2020
 #############
 
-dat.file <- list.files(path = "~./Data/", pattern = "*Tests*.csv", full.names = TRUE)
+dat.file <- list.files(path = "./Data/", pattern = "*Tests*", full.names = TRUE)
 test.dat <- read.csv (dat.file, stringsAsFactors = FALSE, header = 1)
 plot.dat <- test.dat[!duplicated(test.dat$Date),]
 plot.dat$Date <- as.Date(plot.dat$Date, format = "%d-%m-%y")
@@ -46,7 +46,7 @@ barplot.dat$num.test.completed.from.previous <- c( barplot.dat$num.test.complete
 ##########
 # Plot cumulative tests in Ontario
 #########
-pdf(paste0("~./Plots/Ontario_Testing_Total_Cases_Over_Time_",
+pdf(paste0("./Plots/Ontario_Testing_Total_Cases_Over_Time_",
            Sys.Date(), ".pdf"), width = 7, height = 5)
 par(xpd = T, mar = par()$mar + c(7,0,0,0))
 
@@ -72,7 +72,7 @@ dev.off()
 ##########
 # Plot daily tests administered and completed
 ##########
-pdf(paste0("~./Plots/Ontario_Testing_Capacity_Over_Time_",
+pdf(paste0("./Plots/Ontario_Testing_Capacity_Over_Time_",
            Sys.Date(), ".pdf"), width = 7, height = 5)
 par(xpd = T, mar = par()$mar + c(7,0,0,0))
 
@@ -97,7 +97,7 @@ dev.off()
 ##########
 # Plot daily histogram of test status (in percent)
 ##########
-pdf(paste0("~./Plots/Ontario_Testing_Percent_Cases_Over_Time_",
+pdf(paste0("./Plots/Ontario_Testing_Percent_Cases_Over_Time_",
            Sys.Date(), ".pdf"), width = 7, height = 5)
 par(xpd = T, mar = par()$mar + c(7,0,0,0))
 barplot (t(barplot.dat[,rev(c(2:4))]),
