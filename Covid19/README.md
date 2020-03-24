@@ -14,6 +14,8 @@ Google sheet with historical data: https://docs.google.com/spreadsheets/d/118WiF
 8367 Tests are currently backlogged in Ontario<br/>
 Median completed tests per day is 1913 over the last week (March 17 - March 23); Range = 919-2149<br/>
 Median new tests ordered per day is 2753 over the last week (March 17 - March 23); Range =  989-3873<br/>
+This results in an estimated daily additional backlog of 840 cases (given both variables remain constant)<br/>
+If testing capacity does not increase, the backlog cases are projected to reach 14,247 in one week ((840x7)+8367)<br/>
 Currently new results reported are from tests collected on March 21, 2020 (2 day lag)<br/>
 <img src="https://github.com/cyang3/OntarioCOVID19Testing/blob/master/Covid19/Plots/Ontario_Testing_Backlog_Over_Time_2020-03-23.jpg?raw=true" width="500" height="250" />
 
