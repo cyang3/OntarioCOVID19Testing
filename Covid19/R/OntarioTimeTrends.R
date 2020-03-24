@@ -113,3 +113,44 @@ legend (-0.5, -65, legend = paste0("(Updated: ", Sys.Date(),")"),
       cex = 0.70, bty = "n")
 par(mar=c(5, 4, 4, 2) + 0.1)
 dev.off()
+
+########
+# Visualize how far behind are the backlog
+########
+pdf(paste0("./Plots/Ontario_Testing_Backlog_Over_Time_",
+           Sys.Date(), ".pdf"), width = 6.6, height = 3)
+par(xpd = T, mar = par()$mar + c(0,0.5,0,5))
+# Plot main barplot
+xmax <- signif(max(barplot.dat$Total.approved.for.COVID.testing.to.date, na.rm = TRUE), 2)
+barplot (cbind(barplot.dat$num.test.increase.from.previous,
+               barplot.dat$num.test.completed.from.previous)[!is.na(barplot.dat$num.test.increase.from.previous),],
+         horiz = TRUE, col = rainbow(20), las = 1,
+         names.arg = c("submitted", "completed"),
+         xlab = "Cumulative number of tests",
+         xlim = c(0,xmax), 
+         cex.names = 0.8, cex.axis = 0.8)
+legend (xmax+3000, 3.5, 
+        fill = rainbow(20), 
+        title = "Date",
+        legend = barplot.dat$Date[!is.na(barplot.dat$num.test.increase.from.previous)],
+        cex = 0.60)
+# Plot cumulative annotation
+segments(x0 = sum(barplot.dat$num.test.completed.from.previous, na.rm = TRUE),
+         y0 = 0 , y1 = 3, lwd = 2.5, lty = 2,
+         col = "black")
+text (x = sum(barplot.dat$num.test.completed.from.previous, na.rm = TRUE),
+      y = 3.2, col = "red", cex = 0.90,
+      labels = barplot.dat$Date[!is.na(barplot.dat$num.test.increase.from.previous)][
+        sum(cumsum(barplot.dat$num.test.increase.from.previous[!is.na(barplot.dat$num.test.increase.from.previous)]) < sum(barplot.dat$num.test.completed.from.previous,na.rm = TRUE))+1])
+segments(x0 = sum(barplot.dat$num.test.increase.from.previous, na.rm = TRUE),
+         y0 = 0 , y1 = 3, lwd = 2.5, lty = 2,
+         col = "black")
+text (x = sum(barplot.dat$num.test.increase.from.previous, na.rm = TRUE),
+      y = 3.2, labels = tail(barplot.dat$Date,n=1), cex = 0.80)
+backlog <- sum(barplot.dat$num.test.increase.from.previous, na.rm = TRUE) - sum(barplot.dat$num.test.completed.from.previous, na.rm = TRUE)
+text (x = sum(barplot.dat$num.test.completed.from.previous, na.rm = TRUE)+ (backlog/2),
+      y = 1.9, labels = paste(backlog, "pending"), cex = 0.80)
+text (x = 0, y = 3, 
+      labels = paste0("(Updated: ", Sys.Date(),")"), cex = 0.70)
+par(mar=c(5, 4, 4, 2) + 0.1)
+dev.off()
