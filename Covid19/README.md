@@ -17,7 +17,9 @@ Median new tests ordered per day is 2753 over the last week (March 17 - March 23
 This results in an estimated daily additional backlog of 840 cases (given both variables remain constant)<br/>
 If testing capacity does not increase, the backlog cases are projected to reach 14,247 in one week ((840x7)+8367)<br/>
 Currently new results reported are from tests collected on March 21, 2020 (2 day lag)<br/>
-This analysis is under the assumption that all tests results are returned in order of submission (oldet to be completed first)<br/>
+##### Assumptions #####  
+* All tests results are returned in order of submission (oldest to be completed first)<br/>
+* Equal load and rate of output from all 4 currently operational testing laborabories.
 <img src="https://github.com/cyang3/OntarioCOVID19Testing/blob/master/Covid19/Plots/Ontario_Testing_Backlog_Over_Time_2020-03-23.jpg?raw=true" width="500" height="250" />
 
 ### How much are we testing? ###
