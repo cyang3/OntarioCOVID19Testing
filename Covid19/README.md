@@ -2,11 +2,11 @@
 Created: March 23, 2020
 
 ### What is this repository for? ###
-Repository for publically available longitudinal Ontario COVID-19 testing data.
+Repository for publically available longitudinal Ontario COVID-19 testing data.<br/>
 Simple visualizations and summary
 
 ### Data ###
-Data source updated daily from: https://www.ontario.ca/page/2019-novel-coronavirus#section-0
+Data source updated daily from: https://www.ontario.ca/page/2019-novel-coronavirus#section-0<br/>
 Google sheet with historical data: https://docs.google.com/spreadsheets/d/118WiFsInOdLcQbXVX9xYtaZynftoCj6d7q5FqnRYcgY/edit#gid=0
 
 ### How bad is the test backlog? ###
