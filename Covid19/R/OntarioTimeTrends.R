@@ -3,7 +3,7 @@
 # March 23, 2020
 #############
 
-dat.file <- list.files(path = "./Data/", pattern = "*Tests*", full.names = TRUE)
+dat.file <- list.files(path = "./Data/", pattern = paste0("*",Sys.Date(),"*"), full.names = TRUE)
 test.dat <- read.csv (dat.file, stringsAsFactors = FALSE, header = 1)
 plot.dat <- test.dat[!duplicated(test.dat$Date),]
 plot.dat$Date <- as.Date(plot.dat$Date, format = "%d-%m-%y")
