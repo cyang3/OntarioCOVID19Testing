@@ -1,5 +1,6 @@
 # Ontario COVID19 Testing Longitudinal Data #
-Created: March 23, 2020
+Updated: March 28, 2020<br/>
+Created: March 23, 2020<br/>
 
 ### What is this repository for? ###
 Repository for publically available longitudinal Ontario COVID-19 testing data.<br/>
@@ -10,6 +11,14 @@ Data source updated daily from: https://www.ontario.ca/page/2019-novel-coronavir
 Google sheet with historical data: https://docs.google.com/spreadsheets/d/118WiFsInOdLcQbXVX9xYtaZynftoCj6d7q5FqnRYcgY/edit#gid=0
 
 ### How bad is the test backlog? ###
+#### March 28,2020 ####
+Over the last two days of reporting (March 27-28), there has been a significant drop in the number of cases in the testing backlog<br/>
+3399 Mean tests completed over last two days<br/>
+2130 Mean tests completed over last week (not including March 27-28)<br/>
+8690 Tests are currently backlogged in Ontario<br/>
+Backlog tests spiked on March 26th with 10965 cases<br/>
+<img src="https://github.com/cyang3/OntarioCOVID19Testing/blob/master/Covid19/Plots/Ontario_Testing_Total_Cases_Over_Time_2020-03-28.jpg?raw=true" width="800" height="300" /> 
+
 #### March 23,2020 ####
 8367 Tests are currently backlogged in Ontario<br/>
 Median completed tests per day is 1913 over the last week (March 17 - March 23); Range = 919-2149<br/>
