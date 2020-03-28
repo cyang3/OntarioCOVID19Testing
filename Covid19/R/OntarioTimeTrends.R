@@ -3,7 +3,7 @@
 # March 23, 2020
 #############
 
-dat.file <- list.files(path = "./Data/", pattern = paste0("*",Sys.Date(),"*"), full.names = TRUE)
+dat.file <- list.files(path = "./Data/", pattern = paste0("*",Sys.Date(),".csv"), full.names = TRUE)
 test.dat <- read.csv (dat.file, stringsAsFactors = FALSE, header = 1)
 plot.dat <- test.dat[!duplicated(test.dat$Date),]
 plot.dat$Date <- as.Date(plot.dat$Date, format = "%d-%m-%y")
@@ -147,7 +147,7 @@ segments(x0 = sum(barplot.dat$num.test.increase.from.previous, na.rm = TRUE),
          col = "black")
 text (x = sum(barplot.dat$num.test.increase.from.previous, na.rm = TRUE),
       y = 3.2, labels = tail(barplot.dat$Date,n=1), cex = 0.80)
-backlog <- sum(barplot.dat$num.test.increase.from.previous, na.rm = TRUE) - sum(barplot.dat$num.test.completed.from.previous, na.rm = TRUE)
+backlog <- tail(plot.dat$Currently.Under.Investigation,n=1)
 text (x = sum(barplot.dat$num.test.completed.from.previous, na.rm = TRUE)+ (backlog/2),
       y = 1.9, labels = paste(backlog, "pending"), cex = 0.80)
 text (x = 0, y = 3, 
